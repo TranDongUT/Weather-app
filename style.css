@@ -105,3 +105,27 @@
 .sub-detail{
     display: inline;
 }
+
+.search-btn{
+    display: none;
+    outline: none;
+    margin: auto;
+    border: none;
+    padding: 12px 24px;
+    background-color: #1FD537;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.search-btn:hover{
+    box-shadow: 2px 2px 10px #8af098;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .search-btn{
+        display: block;
+    }
+  }

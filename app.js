@@ -62,6 +62,11 @@ const App = {
 }
 App.run();
 
+const searchBtn = $('.search-btn')
+searchBtn.addEventListener('click',()=>{
+    App.run();
+})
+
 document.addEventListener('keydown',(e)=>{
     if(e.code === 'Enter'){
         App.run();
