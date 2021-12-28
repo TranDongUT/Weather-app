@@ -38,7 +38,7 @@ const App = {
         if(hour > 5 && hour <= 10){
             root.classList.add('morning');
         }
-        else if(hour <= 5){
+        else if(hour <= 17){
             root.classList.add('mid');
         }
         else{
