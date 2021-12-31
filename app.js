@@ -34,16 +34,6 @@ const App = {
 
         times.innerText = `${hour}:${minute}:${second}, `;
         date.innerText = ` ${day}/${month}/${year}`
-        const root = $('#root');
-        if(hour > 5 && hour <= 10){
-            root.classList.add('morning');
-        }
-        else if(hour <= 17){
-            root.classList.add('mid');
-        }
-        else{
-            root.classList.add('night')
-        }
     },
 
     render(data){
@@ -51,6 +41,16 @@ const App = {
         this.handleTime(data.dt);
         city.innerText = data.name;
         temperature.innerText = Math.ceil(data.main.temp);
+        const root = $('#root');
+        if(data.main.temp > 10 && data.main.temp <= 25){
+            root.classList.add('morning');
+        }
+        else if(data.main.temp <= 30){
+            root.classList.add('mid');
+        }
+        else{
+            root.classList.add('night')
+        }
         visibility.innerText = `${data.visibility} (m)`;
         windSpeed.innerText = `${data.wind.speed} (m/s)`;
         sun.innerText = `${data.clouds.all} (%)`
