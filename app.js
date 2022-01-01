@@ -23,6 +23,7 @@ const App = {
     },
 
     handleTime(miliseconds){
+
         const d = new Date();
 
         let second = d.getSeconds();
@@ -40,16 +41,17 @@ const App = {
 
         this.handleTime(data.dt);
         city.innerText = data.name;
-        temperature.innerText = Math.ceil(data.main.temp);
+        let temp = Math.ceil(data.main.temp );     
+        temperature.innerText = temp;
         const root = $('#root');
-        if(data.main.temp > 10 && data.main.temp <= 25){
-            root.classList.add('morning');
+        if(temp < 20){
+            root.setAttribute('class','morning');
         }
-        else if(data.main.temp <= 30){
-            root.classList.add('mid');
+        else if(temp < 25){
+            root.setAttribute('class','night');
         }
         else{
-            root.classList.add('night')
+            root.setAttribute('class','mid');
         }
         visibility.innerText = `${data.visibility} (m)`;
         windSpeed.innerText = `${data.wind.speed} (m/s)`;
